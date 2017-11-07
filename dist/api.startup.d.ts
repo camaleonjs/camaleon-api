@@ -1,4 +1,4 @@
-import { IOptions } from './options.interface';
+import { IOptions } from "./options.interface";
 export declare class ApiStartup {
     private options;
     private restifyServer;

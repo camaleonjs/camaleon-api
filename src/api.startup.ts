@@ -1,6 +1,6 @@
-import * as restify from 'restify';
-import { IController } from './controller.intarface';
-import { IOptions } from './options.interface';
+import * as restify from "restify";
+import { IController } from "./controller.intarface";
+import { IOptions } from "./options.interface";
 
 export class ApiStartup {
 
@@ -11,7 +11,6 @@ export class ApiStartup {
     }
 
     async Run(): Promise<any> {
-
         this.restifyServer = restify.createServer();
 
         if (this.options.beforeConfigure) {

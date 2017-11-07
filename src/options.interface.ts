@@ -1,5 +1,5 @@
-import { Server } from 'restify';
-import { IController } from './controller.intarface';
+import { Server } from "restify";
+import { IController } from "./controller.intarface";
 
 export interface IOptions {
 

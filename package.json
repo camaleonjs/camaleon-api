@@ -1,6 +1,6 @@
 {
     "name": "camaleon-api",
-    "version": "1.0.5",
+    "version": "1.0.6",
     "description": "api base using typescript",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
@@ -36,6 +36,7 @@
         "typescript": "^2.4.1"
     },
     "devDependencies": {
+        "@types/node": "^8.0.50",
         "nodemon": "^1.11.0",
         "ts-node": "^3.2.0"
     },

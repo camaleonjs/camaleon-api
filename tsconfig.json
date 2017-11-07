@@ -1,12 +1,25 @@
 {
+    "compileOnSave": false,
     "compilerOptions": {
-        "module": "commonjs",
-        "target": "es6",
-        "noImplicitAny": false,
-        "moduleResolution": "node",
-        "declaration": true,
-        "sourceMap": false,
-        "strict": true,
-        "outDir": "./dist"
+      "outDir": "./dist",
+      "baseUrl": "src",
+      "sourceMap": false,
+      "declaration": true,
+      "moduleResolution": "node",
+      "emitDecoratorMetadata": true,
+      "module": "commonjs",
+      "experimentalDecorators": true,
+      "target": "es5",
+      "types": [
+        "node"
+     ],
+      "typeRoots": [
+        "node_modules/@types"
+      ],
+      "lib": [
+        "es2016",
+        "dom"
+      ]
     }
-}
+  }
+  
