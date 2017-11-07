@@ -3,5 +3,5 @@ export declare class ApiStartup {
     private options;
     private restifyServer;
     constructor(options: IOptions);
-    Run(): Promise<any>;
+    Run(): any;
 }
