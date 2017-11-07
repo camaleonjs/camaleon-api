@@ -16,7 +16,9 @@ class ApiStartup {
     Run() {
         return __awaiter(this, void 0, void 0, function* () {
             this.restifyServer = restify.createServer();
-            this.options.beforeConfigure(this.restifyServer);
+            if (this.options.beforeConfigure) {
+                this.options.beforeConfigure(this.restifyServer);
+            }
             this.restifyServer.use(restify.plugins.acceptParser(this.restifyServer.acceptable));
             this.restifyServer.use(restify.plugins.authorizationParser());
             this.restifyServer.use(restify.plugins.dateParser());
@@ -24,7 +26,9 @@ class ApiStartup {
             this.restifyServer.use(restify.plugins.jsonp());
             this.restifyServer.use(restify.plugins.gzipResponse());
             this.restifyServer.use(restify.plugins.bodyParser({ mapParams: true }));
-            this.options.afterConfigure(this.restifyServer);
+            if (this.options.afterConfigure) {
+                this.options.afterConfigure(this.restifyServer);
+            }
             this.options.controllers.forEach(element => {
                 element.register(this.restifyServer);
             });

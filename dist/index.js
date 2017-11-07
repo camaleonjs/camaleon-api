@@ -1,4 +1,6 @@
 "use strict";
+function __export(m) {
+    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
+}
 Object.defineProperty(exports, "__esModule", { value: true });
-var api_startup_1 = require("./api.startup");
-exports.ApiStartup = api_startup_1.ApiStartup;
+__export(require("./api.startup"));
