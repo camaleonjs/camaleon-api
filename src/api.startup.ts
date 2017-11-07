@@ -10,7 +10,7 @@ export class ApiStartup {
 
     }
 
-    async Run(): Promise<any> {
+    Run(): any {
         this.restifyServer = restify.createServer();
 
         if (this.options.beforeConfigure) {
@@ -25,19 +25,14 @@ export class ApiStartup {
         this.restifyServer.use(restify.plugins.gzipResponse());
         this.restifyServer.use(restify.plugins.bodyParser({ mapParams: true }));
 
-        if (this.options.afterConfigure) {
-            this.options.afterConfigure(this.restifyServer);
-        }
-
         this.options.controllers.forEach(element => {
             element.register(this.restifyServer);
         });
 
-        return new Promise((resolve, reject) => {
-            this.restifyServer.listen(this.options.port, (err) => {
-                resolve(err);
-            });
-        });
+        this.restifyServer.listen(this.options.port);
 
+        if (this.options.afterConfigure) {
+            this.options.afterConfigure(this.restifyServer);
+        }
     }
 }

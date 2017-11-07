@@ -5,6 +5,6 @@ export interface IOptions {
 
     port: number;
     controllers: Array<IController>;
-    afterConfigure?: (server: Server) => any;
     beforeConfigure?: (server: Server) => any;
+    afterConfigure?: (server: Server) => any;
 }
