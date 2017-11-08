@@ -25,13 +25,13 @@ export class ApiStartup {
         this.restifyServer.use(restify.plugins.gzipResponse());
         this.restifyServer.use(restify.plugins.bodyParser({ mapParams: true }));
 
-        this.options.controllers.forEach(element => {
-            element.register(this.restifyServer);
-        });
-
         if (this.options.afterConfigure) {
             this.options.afterConfigure(this.restifyServer);
         }
+
+        this.options.controllers.forEach(element => {
+            element.register(this.restifyServer);
+        });
 
         this.restifyServer.listen(this.options.port);
     }

@@ -18,12 +18,12 @@ var ApiStartup = /** @class */ (function () {
         this.restifyServer.use(restify.plugins.jsonp());
         this.restifyServer.use(restify.plugins.gzipResponse());
         this.restifyServer.use(restify.plugins.bodyParser({ mapParams: true }));
-        this.options.controllers.forEach(function (element) {
-            element.register(_this.restifyServer);
-        });
         if (this.options.afterConfigure) {
             this.options.afterConfigure(this.restifyServer);
         }
+        this.options.controllers.forEach(function (element) {
+            element.register(_this.restifyServer);
+        });
         this.restifyServer.listen(this.options.port);
     };
     return ApiStartup;
