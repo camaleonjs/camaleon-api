@@ -29,10 +29,10 @@ export class ApiStartup {
             element.register(this.restifyServer);
         });
 
-        this.restifyServer.listen(this.options.port);
-
         if (this.options.afterConfigure) {
             this.options.afterConfigure(this.restifyServer);
         }
+
+        this.restifyServer.listen(this.options.port);
     }
 }

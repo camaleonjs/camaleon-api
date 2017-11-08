@@ -21,10 +21,10 @@ var ApiStartup = /** @class */ (function () {
         this.options.controllers.forEach(function (element) {
             element.register(_this.restifyServer);
         });
-        this.restifyServer.listen(this.options.port);
         if (this.options.afterConfigure) {
             this.options.afterConfigure(this.restifyServer);
         }
+        this.restifyServer.listen(this.options.port);
     };
     return ApiStartup;
 }());
